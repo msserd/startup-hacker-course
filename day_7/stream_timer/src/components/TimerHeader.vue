@@ -11,5 +11,6 @@ const props = defineProps({
 <style scoped lang="scss">
 .timerheader {
     margin-bottom: 20px;
+    text-align: center;
 }
 </style>
