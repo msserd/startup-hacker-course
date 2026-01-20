@@ -1,11 +1,11 @@
 <template>
-    <div class="app-wrapper">
-        <div class="timerbox">
+    <div class="s-app-wrapper">
+        <div class="s-timerbox">
             <TimerHeader :title="isLive ? 'В эфире' : 'Будем в эфире через'"/>
-            <div class="timerbox-display">
+            <div class="s-timerbox-display">
                 <TimerSegment v-for="(part, index) in dateParts" :key="index" :label="part.label" :number="part.number" />
             </div>
-            <div class="datebox">
+            <div class="s-timerbox-datepicker">
                 <SDatePicker v-model="targetDate" />
             </div>
         </div>
@@ -67,14 +67,14 @@
 
 </script>
 <style scoped lang="scss">
-    .app-wrapper {
+    .s-app-wrapper {
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .timerbox {
+    .s-timerbox {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -88,18 +88,18 @@
             justify-content: center;
             gap: 10px;
         }
-    }
 
-    .datebox{
-        display: flex;
-        justify-content:center;
-        margin-top:1rem;
+        &-datepicker{
+            display: flex;
+            justify-content:center;
+            margin-top:1rem;
 
-        .s-datepicker{
-            background-color: var(--s-white);
-            padding: 1rem;
-            border: 1px solid var(--s-border);
-            border-radius: var(--s-border-radius);
+            .s-datepicker{
+                background-color: var(--s-white);
+                padding: 1rem;
+                border: 1px solid var(--s-border);
+                border-radius: var(--s-border-radius);
+            }
         }
     }
 </style>

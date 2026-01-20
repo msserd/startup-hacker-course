@@ -1,14 +1,14 @@
 <template>
-<div class="timesegment">
-    <div class="timesegment-datawrapper">
-        <div class="timesegment-number-wrapper">
-            <Transition name="slide-up" mode="out-in">
-                <span class="number" :key="number">{{ number }}</span>
-            </Transition>
+    <div class="s-timerbox-timesegment">
+        <div class="s-timerbox-timesegment-datawrapper">
+            <div class="s-timerbox-timesegment-number-wrapper">
+                <Transition name="slide-up" mode="out-in">
+                    <span class="s-timerbox-timesegment-number" :key="number">{{ number }}</span>
+                </Transition>
+            </div>
+            <span class="s-timerbox-timesegment-label">{{ label }}</span>
         </div>
-        <span class="label">{{ label }}</span>
     </div>
-</div>
 </template>
 <script setup>
     defineProps({
@@ -17,7 +17,7 @@
     });
 </script>
 <style scoped lang="scss">
-    .timesegment {
+    .s-timerbox-timesegment {
         &-datawrapper {
             display: flex;
             flex-direction: column;
@@ -35,10 +35,10 @@
             width: 70px;
         }
 
-        .number {
+        &-number {
             font-size: 32px;
         }
-        .label {
+        &-label {
             font-size: 16px;
         }
     }
